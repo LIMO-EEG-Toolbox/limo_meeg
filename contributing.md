@@ -15,13 +15,13 @@ If you have any questions please [get in touch](@cyril.pernet@ed.ac.uk).
 
 ## Joining the project
 
-LIMO EEG is open source and open developpment project focusing on the LInear Modeling of EEG data. As such it is required that all contributions **adhere to our [Code of Conduct](CODE_OF_CONDUCT.md)**.
+LIMO EEG is open source and open developpment project focusing on the LInear Modeling of MEEG data. As such it is required that all contributions **adhere to our [Code of Conduct](CODE_OF_CONDUCT.md)**.
 
-How do you know that you joined? well, you're here and you likely used limo_eeg and started doing something beyond just using and want to push, add you bug fixes / code / documentation / exemples .. ot have your own extension - Welcome! you are now part of the project.
+How do you know that you joined? well, you're here and you likely used limo tools and started doing something beyond just using and want to push, add your bug fixes / code / documentation / exemples .. or have your own extension - Welcome! you are now part of the project.
 
 ## Contributing without writing a line of code
 
-There are many ways you can contribute to the project without having to wite a single line of code!
+There are many ways you can contribute to the project without having to write a single line of code!
 - editing and updating the wiki all the [/help/docs](https://github.com/LIMO-EEG-Toolbox/limo_eeg/tree/master/help/docs) should really be updated and moved over.
 - making any tutorials, exemples available
 
