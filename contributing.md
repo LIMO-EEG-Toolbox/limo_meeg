@@ -1,4 +1,4 @@
-# Contributing to [LIMO EEG](https://github.com/LIMO-EEG-Toolbox/limo_eeg)
+# Contributing to [LIMO MEEG](https://github.com/LIMO-EEG-Toolbox/limo_eeg)
 
 *Thank you considering contributing to the project.*
 
