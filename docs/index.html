@@ -1,8 +1,413 @@
-<p style="text-align: left;"><span style="color: #0000ff;"><strong>LIMO MEEG: the application software for the LInear Modeling of</strong></span></p>
-<p style="text-align: left;"><span style="color: #0000ff;"><strong>Magneto- and Electro- Encehalographic Data.</strong></span></p>
-<p>&nbsp;</p>
-<p><strong>What can LIMO MEEG do?</strong></p>
-<p>Our toolbox offers a range statistical tools to interface with major human electrophysiology software. It relies on a hierarchical modelling approach: for each subject we model the experimental design and obtain parameters; at the group level do the 'usual' statistics on those parameters. Thuis works fo ERP, power spectrum or ERSP (time/frequency) at the channel level and on IC (from ICA decomposition).&nbsp;</p>
-<p><em>Supported tests</em>: one sample t-test, two-samples t-tests, paired t-tests, ANOVA, ANCOVA, repeated measures ANOVA, single and multiple regressions.</p>
-<p>Additional tests (available but non supported at present): Linear and Quadratic Discriminant Analysis, Spatial MANOVA.</p>
-<p>&nbsp;</p>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LIMO MEEG, the open source application for statistical analysis of electrophysiological data</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="landing page for the LIMO MEEG toolbox" />
+	<meta name="keywords" content="eeg, meg, statistics" />
+	<meta name="author" content="Cyril Pernet" />
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="navbar-header">
+						<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+						<a class="navbar-brand" href="index.html">LIMO MEEG</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+							<li><a href="#" data-nav-section="download"><span>Download</span></a></li>
+							<li><a href="#" data-nav-section="installation"><span>Installation</span></a></li>
+							<li><a href="#" data-nav-section="overview"><span>Tools overview</span></a></li>
+							<li><a href="#" data-nav-section="contribution"><span>Contribute</span></a></li>
+							<li><a href="#" data-nav-section="faq"><span>FAQ</span></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+	  </div>
+	</header>
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_4.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<h1 class="animate-box"><span class="big">LInear MOdeling</span> <br><span class="medium">for Magneto-</span> <br><span class="medium">and Electro-</span><br><span>Encephalography</span> <br></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-explore" data-section="download">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="animate-box">Download</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext animate-box">
+							<h3>Download the zip file, clone or fork our <a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg"> master repository </a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-services" data-section="installation">
+		<div class="fh5co-services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-link2"></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+								<h3>Use with EEGLAB</h3>
+								<p>LIMO tools were developped with EEGLAB functions for reading files and do some vizualization. Simply unpack the repository into the EEGLAB plugin folder. It can be called via STUDY using the EEGLAB developper version.</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-cog2"></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+								<h3>Stand Alone usage</h3>
+								<p>All the statistics are performed internaly and therefore our tools can be used as stand alone. After setting the path to the toolbox, you can call statistical functions and vizualize results. Check the wiki on how to use each function for your analyses</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-unlock"></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+								<h3>FieldTrip wishes</h3>
+								<p>The next frontiers ... there are no reasons why we could not integrate. We are actively looking for new contributors who want to make this happen.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-pricing" data-section="overview">
+		<section class="Tool overview bg-3">
+				<div class="container">
+					<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="animate-box">Tools overview</h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext animate-box">
+								<h3>Modern and Robust statistics for electrophysiology</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="row">
+						<div class="col-md-4 text-center animate-box">
+							<div class="pricing__item">
+											<h3 class="pricing__title">Modelling</h3>
+											<p class="pricing__sentence">Flexible Models through a hiearchical approach</p>
+											<ul class="pricing__feature-list">
+												<li class="pricing__feature">Categorical variables</li>
+												<li class="pricing__feature">Continuous variables</li>
+												<li class="pricing__feature">Between trial variance</li>
+												<li class="pricing__feature">Between subject variance</li>
+											</ul>
+									</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="pricing__item">
+											<h3 class="pricing__title">Estimating</h3>
+											<p class="pricing__sentence">Remove influence of outliers</p>
+											<ul class="pricing__feature-list">
+													<li class="pricing__feature">OLS, WLS, IRLS</li>
+													<li class="pricing__feature">Robust estimators</li>
+													<li class="pricing__feature">Credible intervals</li>
+											</ul>
+									</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="pricing__item">
+											<h3 class="pricing__title">Testing</h3>
+											<p class="pricing__sentence">Use modern resampling techniques</p>
+											<ul class="pricing__feature-list">
+													<li class="pricing__feature">Whole space analysis</li>
+													<li class="pricing__feature">FWER correction</li>
+													<li class="pricing__feature">Clustering</li>
+													<li class="pricing__feature">TFCE</li>
+											</ul>
+									</div>
+						</div>
+					</div>
+				</div>
+		 </section>
+	</section>
+
+	<section id="fh5co-testimony" data-section="contribution">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="animate-box"><span>How to contribute to the project</span></h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext animate-box">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>The prefered way to report bugs is to submit an issue on github, but emailing us is fine too. We'll try to adress your problem as soon as possible</p>
+						</div>
+						<div class="author-img" style="background-image: url(images/user-1.jpg);"></div>
+						<span class="user">Bug report <br></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>The fastest way to get acknowledged is to add your name to our <a href="https://github.com/LIMO-EEG-Toolbox/limo_meeg/blob/master/contributors.md" target="_blank" style="color: #cc0000"> contributor list </a></p>
+						</div>
+						<div class="author-img" style="background-image: url(images/user-4.jpg);"></div>
+						<span class="user">Get acknowledged <br> </span>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Found a bug and fixed it! submit the pull request to we can merge it - add your name on our contributor lists</p>
+						</div>
+						<div class="author-img" style="background-image: url(images/user-2.jpg);"></div>
+						<span class="user">Bug fixing <br> </span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>There are always new methods to use, maybe you designed one?. Get in touch to integrate it to the list of tools</p>
+						</div>
+						<div class="author-img" style="background-image: url(images/user-5.jpg);"></div>
+						<span class="user">Add your own algorithms <br> </span>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+						  <p>There many ways to contribute, including documentation and testing, <a href="https://github.com/LIMO-EEG-Toolbox/limo_meeg/blob/master/contributing" target="_blank" style="color: #cc0000"> check it out </a></p>
+						</div>
+						<div class="author-img" style="background-image: url(images/user-6.jpg);"></div>
+						<span class="user">Beyond bugs <br> </span>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<section id="fh5co-blog" data-section="faq">
+		<div class="fh5co-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="animate-box"><span>Using LIMO tools - FAQ</span></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box blog">
+						<a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-1.jpg);">
+								<div class="desc">
+									<p>one sample t-test, two-samples t-tests, paired t-tests, ANOVA, ANCOVA, repeated measures ANOVA, single and multiple regressions, and more to come.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h4>Which tests are available?</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki/Repeated-Measure-ANOVA" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-2.jpg);">
+								<div class="desc">
+									<p>For each subject, code each condition (e.g. 4 conditions in a 2x2 design). At the group level, compute a repeated measures ANOVA with N factors (eg. 2x2).</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h4>Analyzing factorial designs</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="https://en.wikipedia.org/wiki/Robust_statistics" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-3.jpg);">
+								<div class="desc">
+									<p>These are statistical procedures that work for non-normal distributions and are this not affect by outliers.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h4>What is robustness?</h4>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 animate-box blog">
+						<a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki/Channel-Neighbourhood" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-3.jpg);">
+								<div class="desc">
+									<p>To compute clusters at the channel level, one must declare which channels are neighbours, i.e. which channels we want to see grouped together.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>What are channel neighbours?</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki/Reporting-results-differs-with-the-method-used" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-1.jpg);">
+								<div class="desc">
+									<p>Results must be interpreted based on the statistical method used for inference, cell-wise or cluster-wise</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Reporting results</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki/Defining-conditions" class="entry" target="_blank">
+							<div class="blog-bg" style="background-image: url(images/blog-2.jpg);">
+								<div class="desc">
+									<p>Depending if you want to do a group analysis or single subject analyses, conditions can be declared as a single or multiple entries (factorial design per subject).</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Define conditions</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">LIMO EEG.</h3>
+					<p>The free open source and open developpment toolbox for the statistical analysis of electrophysiological data.</p>
+
+				</div>
+
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">Maintainer</h3>
+					<ul class="contact-info">
+						<li><i class="icon-envelope"></i>Dr Cyril Pernet</li>
+						<li><i class="icon-map"></i>Edinburgh Imaging, University of Edinburgh, UK</li>
+						<li><i class="icon-globe"></i><a href="#">http://www.sbirc.ed.ac.uk/cyril/</a></li>
+				</div>
+
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">Connect with Us</h3>
+					<ul class="social-media">
+						<li><a href="@CyrilRPernet" class="twitter"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://github.com/LIMO-EEG-Toolbox" class="github"><i class="icon-github-alt"></i></a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copy-right">&copy; 2015 Solid Free Template. All Rights Reserved. <br>
+						Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
+						Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
