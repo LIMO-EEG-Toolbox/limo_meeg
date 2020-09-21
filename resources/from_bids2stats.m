@@ -184,11 +184,12 @@ limo_random_select('Repeated Measures ANOVA',chanlocs,'LIMOfiles',...
 
 % add contrast
 load('LIMO.mat')
-LIMO.contrast{1}.C = [1 -05 -05 0];             % set contrast, note the last column 0 for constant`
+LIMO.contrast{1}.C = [1 -0.5 -0.5 0];           % set contrast, note the last column 0 for constant`
 LIMO.contrast{1}.V = 'F';                       % always F test for repeated measure ANOVA`
 limo_contrast([pwd filesep 'Yr.mat'], LIMO, 3); % run the contrast
 limo_contrast([pwd filesep 'Yr.mat'], LIMO, 4)  % apply bootstrap
 save LIMO LIMO
+limo_eeg(5)
 
 % make topoplots
 stats = load('ess_1.mat');
