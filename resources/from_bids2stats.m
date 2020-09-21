@@ -1,4 +1,4 @@
-% BIDS Tools / EEGLAB / LIMO EEG 
+% BIDS Tools / EEGLAB / LIMO EEG
 % data analysis of Wakeman and Henson 2015 data
 % Arnaud Delorme & Cyril Pernet
 
@@ -7,13 +7,13 @@
 % start EEGLAB
 clear
 [ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
- 
+
 % call BIDS tool BIDS
-studypath       = 'XXX\WakemanHenson_Faces\eeg';
+studypath       = 'XXX\ds002718';
 [STUDY, ALLEEG] = pop_importbids(filepath, 'bidsevent','on','bidschanloc','on', 'studyName','Face_detection');
 ALLEEG          = pop_select( ALLEEG, 'nochannel',{'EEG061','EEG062','EEG063','EEG064'});
-CURRENTSTUDY    = 1; 
-EEG             = ALLEEG; 
+CURRENTSTUDY    = 1;
+EEG             = ALLEEG;
 CURRENTSET      = 1:length(EEG);
 
 
@@ -24,10 +24,10 @@ EEG = pop_clean_rawdata( EEG,'FlatlineCriterion',5,'ChannelCriterion',0.8,...
     'LineNoiseCriterion',4,'Highpass',[0.25 0.75] ,...
     'BurstCriterion','off','WindowCriterion','off','BurstRejection','off',...
     'Distance','Euclidian','WindowCriterionTolerances','off' );
- 
+
 % Rereference using average reference
 EEG = pop_reref( EEG,[],'interpchan',[]);
- 
+
 % Run ICA and flag artifactual components using IClabel
 for s=1:size(EEG,2)
     EEG(s) = pop_runica(EEG(s), 'icatype','runica','concatcond','on','options',{'pca',EEG(s).nbchan-1});
@@ -35,7 +35,7 @@ for s=1:size(EEG,2)
     EEG(s) = pop_icflag(EEG(s),[NaN NaN;0.8 1;0.8 1;NaN NaN;NaN NaN;NaN NaN;NaN NaN]);
     EEG(s) = pop_subcomp(EEG(s), find(EEG(s).reject.gcompreject), 0);
 end
- 
+
 % clear data using ASR - just the bad epochs
 EEG = pop_clean_rawdata( EEG,'FlatlineCriterion','off','ChannelCriterion','off',...
     'LineNoiseCriterion','off','Highpass','off','BurstCriterion',20,...
@@ -48,7 +48,7 @@ EEG    = pop_epoch( EEG,{'famous_new','famous_second_early','famous_second_late'
 EEG    = eeg_checkset(EEG);
 EEG    = pop_saveset(EEG, 'savemode', 'resave');
 ALLEEG = EEG;
- 
+
 % update study & compute single trials
 STUDY        = std_checkset(STUDY, ALLEEG);
 [STUDY, EEG] = std_precomp(STUDY, EEG, {}, 'savetrials','on','interp','on','recompute','on',...
@@ -115,13 +115,13 @@ Files = [STUDY.filepath filesep 'LIMO_' STUDY.filename(1:end-6) filesep ...
     'LIMO_files_FaceRepetition_GLM_Channels_Time_WLS.txt'];
 parameters = [1 2 3];
 savename1  = [pwd filesep 'famous_faces.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename1) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename1)
 parameters = [4 5 6];
 savename2  = [pwd filesep 'srambled_faces.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename2) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename2)
 parameters = [7 8 9];
 savename3  = [pwd filesep 'unfamiliar_faces.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename3) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename3)
 limo_add_plots([savename1(1:end-4) '_Mean_of_Weighted mean.mat'],...
     [savename2(1:end-4) '_Mean_of_Weighted mean.mat'],[savename3(1:end-4) '_Mean_of_Weighted mean.mat'],...
     'channel',50); title('Face type at channel 50')
@@ -139,13 +139,13 @@ fprintf('Faces vs. Scrambled @ peak = %g uV CI=[%g %g]\n',TM(50,peaktime,2),TM(5
 
 parameters = [1 4 7];
 savename1  = [pwd filesep 'first_time.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename1) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename1)
 parameters = [2 5 8];
 savename2  = [pwd filesep 'second_time.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename2) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename2)
 parameters = [3 6 9];
 savename3  = [pwd filesep 'third_time.mat'];
-limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename3) 
+limo_central_tendency_and_ci(Files, parameters, chanlocs, 'Weighted mean', 'Mean', [],savename3)
 limo_add_plots([savename1(1:end-4) '_Mean_of_Weighted mean.mat'],...
     [savename2(1:end-4) '_Mean_of_Weighted mean.mat'],[savename3(1:end-4) '_Mean_of_Weighted mean.mat'],...
     'channel',45); title('Repetition effect at channel 45')
