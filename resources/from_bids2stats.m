@@ -2,22 +2,18 @@
 % data analysis of Wakeman and Henson 2015 data
 % Arnaud Delorme & Cyril Pernet
 
-
-%% Import
 % start EEGLAB
-clear
-[ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
+clear; [ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
 
 % call BIDS tool BIDS
 studypath       = 'XXX\ds002718';
-[STUDY, ALLEEG] = pop_importbids(filepath, 'bidsevent','on','bidschanloc','on', 'studyName','Face_detection');
+[STUDY, ALLEEG] = pop_importbids(filepath,'bidsevent','on','bidschanloc','on',...
+                  'studyName','Face_detection','outputdir', fullfile(filepath, 'derivatives'), ...
+                  'eventtype', 'trial_type');
 ALLEEG          = pop_select( ALLEEG, 'nochannel',{'EEG061','EEG062','EEG063','EEG064'});
 CURRENTSTUDY    = 1;
 EEG             = ALLEEG;
 CURRENTSET      = 1:length(EEG);
-
-
-%% Preprocessing
 
 % Remove bad channels
 EEG = pop_clean_rawdata( EEG,'FlatlineCriterion',5,'ChannelCriterion',0.8,...
@@ -30,7 +26,7 @@ EEG = pop_reref( EEG,[],'interpchan',[]);
 
 % Run ICA and flag artifactual components using IClabel
 for s=1:size(EEG,2)
-    EEG(s) = pop_runica(EEG(s), 'icatype','runica','concatcond','on','options',{'pca',EEG(s).nbchan-1});
+    EEG(s) = pop_runica(EEG(s), 'icatype','runica','concatcond','on');
     EEG(s) = pop_iclabel(EEG(s),'default');
     EEG(s) = pop_icflag(EEG(s),[NaN NaN;0.8 1;0.8 1;NaN NaN;NaN NaN;NaN NaN;NaN NaN]);
     EEG(s) = pop_subcomp(EEG(s), find(EEG(s).reject.gcompreject), 0);
@@ -43,8 +39,9 @@ EEG = pop_clean_rawdata( EEG,'FlatlineCriterion','off','ChannelCriterion','off',
     'WindowCriterionTolerances',[-Inf 7] );
 
 % Extract data epochs (no baseline removed)
-EEG    = pop_epoch( EEG,{'famous_new','famous_second_early','famous_second_late','scrambled_new','scrambled_second_early','scrambled_second_late','unfamiliar_new','unfamiliar_second_early','unfamiliar_second_late'},...
-    [-0.5 1] ,'epochinfo','yes');
+EEG    = pop_epoch( EEG,{'famous_new','famous_second_early','famous_second_late', ...
+         'scrambled_new','scrambled_second_early','scrambled_second_late','unfamiliar_new', ...
+         'unfamiliar_second_early','unfamiliar_second_late'},[-0.5 1] ,'epochinfo','yes');
 EEG    = eeg_checkset(EEG);
 EEG    = pop_saveset(EEG, 'savemode', 'resave');
 ALLEEG = EEG;
@@ -54,6 +51,9 @@ STUDY        = std_checkset(STUDY, ALLEEG);
 [STUDY, EEG] = std_precomp(STUDY, EEG, {}, 'savetrials','on','interp','on','recompute','on',...
     'erp','on','erpparams', {'rmbase' [-200 0]}, 'spec','off', 'ersp','off','itc','off');
 eeglab redraw
+
+
+
 
 %% Statitiscal analysis
 % to restart the analysis from here - simply reload the STUDY see pop_loadstudy
