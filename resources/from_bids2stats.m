@@ -26,7 +26,7 @@ EEG = pop_reref( EEG,[],'interpchan',[]);
 
 % Run ICA and flag artifactual components using IClabel
 for s=1:size(EEG,2)
-    EEG(s) = pop_runica(EEG(s), 'icatype','runica','concatcond','on');
+    EEG(s) = pop_runica(EEG(s), 'icatype','runica','concatcond','on','options',{'pca',EEG(s).nbchan-1});
     EEG(s) = pop_iclabel(EEG(s),'default');
     EEG(s) = pop_icflag(EEG(s),[NaN NaN;0.8 1;0.8 1;NaN NaN;NaN NaN;NaN NaN;NaN NaN]);
     EEG(s) = pop_subcomp(EEG(s), find(EEG(s).reject.gcompreject), 0);
@@ -51,8 +51,6 @@ STUDY        = std_checkset(STUDY, ALLEEG);
 [STUDY, EEG] = std_precomp(STUDY, EEG, {}, 'savetrials','on','interp','on','recompute','on',...
     'erp','on','erpparams', {'rmbase' [-200 0]}, 'spec','off', 'ersp','off','itc','off');
 eeglab redraw
-
-
 
 
 %% Statitiscal analysis
