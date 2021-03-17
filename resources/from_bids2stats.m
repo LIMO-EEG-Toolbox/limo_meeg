@@ -1,5 +1,6 @@
 % BIDS Tools / EEGLAB / LIMO EEG
 % data analysis of Wakeman and Henson 2015 data
+% Companion of https://github.com/LIMO-EEG-Toolbox/limo_meeg/blob/master/resources/from_bids2stats.m
 % Arnaud Delorme & Cyril Pernet
 
 % start EEGLAB
