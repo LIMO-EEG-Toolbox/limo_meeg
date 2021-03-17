@@ -1,6 +1,13 @@
-% BIDS Tools / EEGLAB / LIMO EEG
-% data analysis of Wakeman and Henson 2015 data
-% Companion of https://github.com/LIMO-EEG-Toolbox/limo_meeg/blob/master/resources/from_bids2stats.m
+% Fully automated data analysis pipeline: BIDS Tools / EEGLAB / LIMO EEG
+%
+% The analysis runs on Wakeman and Henson 2015 data, curated and available at
+% https://openneuro.org/datasets/ds002718
+%
+% This code is the companion of https://www.frontiersin.org/articles/10.3389/fnins.2020.610388/full
+% Pernet CR, Martinez-Cancino R, Truong D, Makeig S and Delorme A (2021) From BIDS-Formatted EEG Data
+% to Sensor-Space Group Results: A Fully Reproducible Workflow With EEGLAB and LIMO EEG. Frontiers in
+% Neuroscience 14:610388. doi: 10.3389/fnins.2020.610388
+%
 % Arnaud Delorme & Cyril Pernet
 
 % start EEGLAB
