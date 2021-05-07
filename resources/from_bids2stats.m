@@ -14,7 +14,7 @@
 clear; [ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
 
 % call BIDS tool BIDS
-studypath       = 'XXX\ds002718';
+filepath       = 'XXX\ds002718';
 [STUDY, ALLEEG] = pop_importbids(filepath,'bidsevent','on','bidschanloc','on',...
                   'studyName','Face_detection','outputdir', fullfile(filepath, 'derivatives'), ...
                   'eventtype', 'trial_type');
