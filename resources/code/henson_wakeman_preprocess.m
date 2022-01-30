@@ -3,13 +3,14 @@ clear variables
 [ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
 
 % import BIDS
-filepath        = 'F:\WakemanHenson_Faces\eeg';
-[STUDY, ALLEEG] = pop_importbids(filepath, 'bidsevent','on','bidschanloc','on', 'studyName','Face_detection');
-ALLEEG = pop_select( ALLEEG, 'nochannel',{'EEG061','EEG062','EEG063','EEG064'});
+bidsfolder      = 'F:\WakemanHenson_Faces\eeg';
+[STUDY, ALLEEG] = pop_importbids(bidsfolder, 'bidsevent','on','bidschanloc','on', ...
+    'eventtype', 'trial_type', 'outputdir' ,fullfile(bidsfolder,'newderivatives'), 'studyName','Face_detection');
+ALLEEG = pop_select( ALLEEG, 'nochannel',{'061','062','063','064'});
 CURRENTSTUDY = 1; EEG = ALLEEG; CURRENTSET = 1:length(EEG);
 
-% reorient if using previous version od the data
-% EEG = pop_chanedit(EEG,'nosedir','+Y');
+% reorient if using previous version of the data
+EEG = pop_chanedit(EEG,'nosedir','+Y');
 
 % Clean data - just the bad channels
 EEG = pop_clean_rawdata( EEG,'FlatlineCriterion',5,'ChannelCriterion',0.8,...
@@ -48,12 +49,12 @@ eeglab redraw
 
 % Precompute ERP and Spectrum measures
 [STUDY, EEG] = std_precomp(STUDY, EEG, {}, 'savetrials','on','interp','on','recompute','on',...
-    'erp','on','erpparams', {'rmbase' [-200 0]}, 'spec','on',...
-    'ersp','on','itc','on', 'specparams',{'specmode','fft','logtrials','off'});
+    'erp','on','erpparams', {'rmbase' [-200 0]}, 'spec','off',...
+    'ersp','off','itc','on', 'specparams',{'specmode','fft','logtrials','off'});
 eeglab redraw
 
-STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','daterp','timelim',[-50 650],'erase','on','splitreg','off','interaction','off');
-STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','datspec','freqlim',[3 45],'erase','on','splitreg','off','interaction','off');
-STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','dattimef','timelim',[-50 650],'freqlim',[3 45],'erase','on','splitreg','off','interaction','off');
-eeglab redraw
-
+% 1st level GLM with LIMO in one line
+%STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','daterp','timelim',[-50 650],'erase','on','splitreg','off','interaction','off');
+%STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','datspec','freqlim',[3 45],'erase','on','splitreg','off','interaction','off');
+%STUDY = pop_limo(STUDY, ALLEEG, 'method','WLS','measure','dattimef','timelim',[-50 650],'freqlim',[3 45],'erase','on','splitreg','off','interaction','off');
+%eeglab redraw
