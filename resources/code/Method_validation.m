@@ -49,8 +49,8 @@ end
 %% get the data
 clear variables
 [ALLEEG, EEG, CURRENTSET, ALLCOM] = eeglab;
-[STUDY, ALLEEG]                   = pop_importbids(studypath, 'bidsevent','on','bidschanloc','on', 'studyName','Face_detection');
-ALLEEG                            = pop_select( ALLEEG, 'nochannel',{'EEG061','EEG062','EEG063','EEG064'});
+[STUDY, ALLEEG]                   = pop_importbids(studypath, 'bidsevent','on','bidschanloc','on', 'eventtype', 'trial_type',,'studyName','Face_detection');
+ALLEEG                            = pop_select( ALLEEG, 'nochannel',{'061','062','063','064'});
 CURRENTSTUDY                      = 1; 
 EEG                               = ALLEEG; 
 CURRENTSET                        = 1:length(EEG);
