@@ -16,6 +16,11 @@ and of course the [wiki](https://github.com/LIMO-EEG-Toolbox/limo_eeg/wiki)
 
 With the software we released a dataset that can now be cited and downloaded here: http://datashare.is.ed.ac.uk/handle/10283/2189
 
+## Questions
+
+Best to use the discussion forums like the eeglab mailing list or neurostar (tagging people) for general analysis questions.  
+You can also email directly or raise a github issue, in particular for bugs.
+
 ## Contribute
 
 Anyone is welcome to contribute ! check here [how you can get involved](https://github.com/LIMO-EEG-Toolbox/limo_eeg/blob/master/contributing.md), the [code of conduct](https://github.com/LIMO-EEG-Toolbox/limo_eeg/blob/master/code_of_conduct.md).
